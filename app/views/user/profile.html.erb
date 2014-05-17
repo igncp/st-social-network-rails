@@ -1,0 +1,10 @@
+<h1>My profile</h1>
+
+<%= form_for(@user, url: user_profile_path) do |f| %>
+    <p>Name: <%= f.text_field :name %></p>
+    <p>Age: <%= f.select :age, (0..101).to_a %></p>
+    <p>Bio: <%= f.text_area :bio %></p>
+    <p>Gender: <%= f.select :gender, [['Male', 'M'], ['Female', 'F']] %></p>
+    <p>Location: <%= f.text_field :location %></p>
+    <p><%= f.submit 'Save' %></p>
+<% end %>

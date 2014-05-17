@@ -1,0 +1,24 @@
+<%= javascript_include_tag "user/search.js" %>
+
+<h1>Search</h1>
+<p>The users will be searched by uname or by location</p>
+<div ng-controller="AppCtrl">
+    
+    <div>
+        <input ng-model="query" type="text">
+        <button id="search" ng-click="search()">Search</button>
+    </div>
+    
+    <div ng-show="users.length == 0"> <p>No results for this text.</p> </div>
+    <div ng-repeat="u in users" class="search-user-result">
+        <p><a href="/users/{{u.user_name}}">{{u.name}}</a></p>
+        <p>Age: {{u.age}}</p>
+        <p>Location: {{u.location}}</p>
+        <p>email: {{u.email}}</p>
+    </div>
+</div>
+
+<%= javascript_tag do %>
+  window.app = {}
+  window.app.user_id = <%= current_user.id %>
+<% end %>

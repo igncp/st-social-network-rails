@@ -1,0 +1,5 @@
+<h1>Dashboard</h1>
+
+<% @messages.each do |message| %>
+    <p><a href="/users/<%= message.user.user_name %>"><%= message.user.name %></a> said: <%= message.content %></p>
+<% end %>

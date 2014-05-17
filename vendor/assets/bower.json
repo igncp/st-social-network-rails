@@ -1,0 +1,12 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-route": "latest",
+    "lodash": "latest",
+    "jquery": "latest",
+    "async": "latest"
+  }
+}

@@ -1,0 +1,13 @@
+<h1>Lookout of <%= @user.name %></h1>
+
+<p>Age: <%= @user.age %></p>
+<p>Location: <%= @user.location %></p>
+<p>Gender: <%= @user.gender %></p>
+<p>Bio: <%= @user.bio %></p>
+
+<% if @messages and @messages.count > 0 %>
+    <p>--</p>
+    <% @messages.each do |message| %>
+        <p><a href="/users/<%= message.user.user_name %>"><%= message.user.name %></a> said: <%= message.content %></p>
+    <% end %>
+<% end %>

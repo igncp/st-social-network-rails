@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html <%= 'ng-app=' + @angularAppName if @angularAppName %>>
+<head>
+    <title>Communirb</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="col-lg-offset-1 col-lg-10" id="container">
+        <header>
+            <h1><%= link_to 'Communirb - Social Network', root_path %></h1>
+        </header>
+        <nav class="col-lg-offset-7">
+            <% if user_signed_in? %>
+                <%= link_to 'Search people', user_search_path %> | 
+                <%= link_to 'Dashboard', root_path %> | 
+                <%= link_to 'My account', user_account_path %> | 
+                <%= link_to 'My profile', user_profile_path %> | 
+                <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <% else %>
+                <%= link_to 'Register', new_user_registration_path %> | 
+                <%= link_to 'Log in', new_user_session_path %>
+            <% end %>
+        </nav>
+        <%= yield %>
+    </div>
+    <footer class="col-lg-offset-1 col-lg-10">
+        <p>See the repo of this site at <%= link_to 'Github', 'https://github.com/igncp' %>.</p>
+    </footer>
+</body>
+</html>

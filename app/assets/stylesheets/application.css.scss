@@ -1,0 +1,35 @@
+/*
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require bootstrap/dist/css/bootstrap-theme.min
+ *= require_self
+ */
+
+header, footer { text-align: center; }
+
+nav { text-align: right;}
+
+.row { margin: 0px; }
+
+.search-user-result {
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+/* Sticky footer:*/
+
+    $height: 40px;
+
+    html, body { height: 100%; }
+
+    #container {
+      min-height: 100%;
+      margin-bottom: -$height; 
+    }
+    #container:after {
+      content: "";
+      display: block;
+    }
+    footer, #container:after { height: $height; }

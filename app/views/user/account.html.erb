@@ -1,0 +1,8 @@
+<h1>My account</h1>
+
+<p>Account: <strong><%= @user.user_name %></strong> (You can't change this)</p>
+
+<%= form_for(@user, url: user_account_path) do |f| %>
+    <p>Email: <%= f.text_field :email %></p>
+    <p><%= f.submit 'Save' %></p>
+<% end %>
