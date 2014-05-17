@@ -8,13 +8,13 @@ defaults: &defaults
   password: <%= ENV['ST_SNR_PSS'] %>
 
 development:
-  database: social_network_rails_dev
+  database: st_social_network_rails_dev
   <<: *defaults
 
 test:
-  database: social_network_rails_test
+  database: st_social_network_rails_test
   <<: *defaults
 
 production:
-  database: social_network_rails_prod
+  database: st_social_network_rails_prod
   <<: *defaults
